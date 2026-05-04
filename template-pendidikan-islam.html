@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurul Ilmi — Pusat Pendidikan & Pelatihan Islam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&family=Lateef:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --hijau-tua: #1a3d2e;
+      --hijau-sedang: #2d6a4f;
+      --hijau-muda: #74c69d;
+      --hijau-pucat: #d8f3dc;
+      --emas-tua: #7a5c00;
+      --emas: #c9a227;
+      --emas-muda: #f0d080;
+      --emas-pucat: #fef9ea;
+      --krem: #fdf8f0;
+      --teks-utama: #1a2e24;
+      --teks-sekunder: #4a6558;
+      --teks-muted: #8aaa9a;
+      --batas: rgba(45,106,79,0.15);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--krem);
+      color: var(--teks-utama);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== ORNAMEN LATAR ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; right: 0;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== NAVIGASI ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26,61,46,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,162,39,0.3);
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--emas);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Amiri', serif;
+      font-size: 18px; color: var(--hijau-tua);
+      font-weight: 700;
+    }
+
+    .logo-teks { color: #fff; }
+    .logo-teks span { display: block; font-size: 17px; font-weight: 600; letter-spacing: 0.5px; }
+    .logo-teks small { font-size: 11px; color: var(--emas-muda); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 400; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-size: 14px; font-weight: 500; letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--emas-muda); }
+
+    .nav-daftar {
+      background: var(--emas);
+      color: var(--hijau-tua) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-daftar:hover { background: var(--emas-muda) !important; color: var(--hijau-tua) !important; }
+
+    .hamburger { display: none; background: none; border: none; cursor: pointer; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--hijau-tua) 0%, #0f2419 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 80px 2rem 0;
+    }
+
+    /* Ornamen geometri islami */
+    .hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 50%;
+      animation: pulsate 8s ease-in-out infinite;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(201,162,39,0.1);
+      border-radius: 50%;
+      animation: pulsate 8s ease-in-out infinite 2s;
+    }
+    @keyframes pulsate {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.7; }
+    }
+
+    .hero-content {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center; width: 100%;
+      position: relative; z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,162,39,0.15);
+      border: 1px solid rgba(201,162,39,0.3);
+      color: var(--emas-muda);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--emas); border-radius: 50%;
+    }
+
+    .hero-ayat {
+      font-family: 'Lateef', serif;
+      font-size: 2.2rem; color: var(--emas-muda);
+      line-height: 1.6; margin-bottom: 1rem;
+      text-align: right; direction: rtl;
+    }
+    .hero-terjemah {
+      font-size: 13px; color: rgba(255,255,255,0.5);
+      font-style: italic; margin-bottom: 2rem;
+    }
+
+    .hero-judul {
+      font-family: 'Amiri', serif;
+      font-size: 3.2rem; color: #fff;
+      line-height: 1.25; margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+    .hero-judul em {
+      font-style: normal;
+      color: var(--emas);
+    }
+
+    .hero-deskripsi {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem; margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .hero-aksi {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+
+    .btn-utama {
+      background: var(--emas);
+      color: var(--hijau-tua);
+      padding: 14px 32px; border-radius: 8px;
+      text-decoration: none; font-weight: 700;
+      font-size: 15px; letter-spacing: 0.3px;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-utama:hover { background: var(--emas-muda); transform: translateY(-2px); }
+
+    .btn-sekunder {
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.85);
+      padding: 14px 32px; border-radius: 8px;
+      text-decoration: none; font-weight: 500;
+      font-size: 15px; transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-sekunder:hover { border-color: var(--emas-muda); color: var(--emas-muda); }
+
+    /* Kartu Statistik Hero */
+    .hero-kanan { position: relative; }
+
+    .hero-stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    .hero-stat:hover {
+      background: rgba(201,162,39,0.08);
+      border-color: rgba(201,162,39,0.4);
+      transform: translateY(-4px);
+    }
+
+    .hero-stat-angka {
+      font-family: 'Amiri', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--emas); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .hero-stat-label {
+      font-size: 13px; color: rgba(255,255,255,0.55);
+      font-weight: 400; letter-spacing: 0.3px;
+    }
+
+    .ornamen-tengah {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-family: 'Amiri', serif;
+      font-size: 2rem; color: rgba(201,162,39,0.25);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    /* ===== SECTION UMUM ===== */
+    section { padding: 5rem 2rem; }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .seksi-label {
+      display: inline-block;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--hijau-sedang); margin-bottom: 0.75rem;
+    }
+
+    .seksi-judul {
+      font-family: 'Amiri', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--teks-utama); line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .seksi-deskripsi {
+      font-size: 1rem; color: var(--teks-sekunder);
+      max-width: 560px;
+    }
+
+    .seksi-header {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 2rem; align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    /* ===== FITUR ===== */
+    .fitur-bg { background: var(--hijau-pucat); }
+
+    .fitur-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .fitur-kartu {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--batas);
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .fitur-kartu::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hijau-sedang), var(--emas));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .fitur-kartu:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,61,46,0.1); }
+    .fitur-kartu:hover::before { opacity: 1; }
+
+    .fitur-ikon {
+      width: 52px; height: 52px;
+      background: var(--hijau-pucat);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 1.25rem;
+      border: 1px solid rgba(45,106,79,0.2);
+    }
+
+    .fitur-judul { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .fitur-teks { font-size: 0.9rem; color: var(--teks-sekunder); line-height: 1.65; }
+
+    /* ===== PROGRAM ===== */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .program-kartu {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--batas);
+      transition: all 0.3s;
+    }
+    .program-kartu:hover { box-shadow: 0 20px 50px rgba(26,61,46,0.12); transform: translateY(-5px); }
+
+    .program-header {
+      padding: 2rem 2rem 1.5rem;
+      background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-sedang));
+      position: relative;
+    }
+
+    .program-level {
+      display: inline-block;
+      background: rgba(201,162,39,0.25); color: var(--emas-muda);
+      padding: 3px 10px; border-radius: 4px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .program-nama {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: #fff; margin-bottom: 0.5rem;
+    }
+    .program-arab {
+      font-family: 'Lateef', serif;
+      font-size: 1.2rem; color: rgba(255,255,255,0.5);
+      direction: rtl;
+    }
+
+    .program-body { padding: 1.75rem 2rem; }
+
+    .program-deskripsi {
+      font-size: 0.9rem; color: var(--teks-sekunder);
+      margin-bottom: 1.25rem; line-height: 1.7;
+    }
+
+    .program-fitur {
+      list-style: none; margin-bottom: 1.75rem;
+    }
+    .program-fitur li {
+      font-size: 0.875rem; color: var(--teks-sekunder);
+      padding: 6px 0; border-bottom: 1px solid var(--batas);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .program-fitur li::before {
+      content: '✓';
+      width: 18px; height: 18px;
+      background: var(--hijau-pucat); color: var(--hijau-sedang);
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; flex-shrink: 0;
+    }
+
+    .program-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1rem;
+    }
+
+    .program-durasi { font-size: 13px; color: var(--teks-muted); }
+    .program-durasi strong { color: var(--teks-utama); font-weight: 600; }
+
+    .btn-daftar {
+      background: var(--hijau-sedang); color: #fff;
+      padding: 10px 22px; border-radius: 8px;
+      text-decoration: none; font-size: 13px;
+      font-weight: 600; transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-daftar:hover { background: var(--hijau-tua); }
+
+    /* ===== TESTIMONIAL ===== */
+    .testi-bg { background: var(--hijau-tua); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testi-kartu {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .testi-kartu:hover { background: rgba(255,255,255,0.1); }
+
+    .testi-bintang { color: var(--emas); font-size: 14px; margin-bottom: 1rem; letter-spacing: 2px; }
+
+    .testi-kutipan {
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testi-profil { display: flex; align-items: center; gap: 12px; }
+
+    .testi-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--emas);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px;
+      color: var(--hijau-tua);
+      flex-shrink: 0;
+    }
+
+    .testi-nama { font-size: 14px; font-weight: 600; color: #fff; }
+    .testi-asal { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+    /* ===== JADWAL ===== */
+    .jadwal-grid {
+      display: grid; gap: 1px;
+      background: var(--batas);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--batas);
+    }
+
+    .jadwal-baris {
+      display: grid;
+      grid-template-columns: 1.5fr 2fr 1fr 1fr 1.5fr;
+      background: #fff;
+      transition: background 0.2s;
+    }
+    .jadwal-baris:first-child { background: var(--hijau-tua); }
+    .jadwal-baris:hover:not(:first-child) { background: var(--hijau-pucat); }
+
+    .jadwal-sel {
+      padding: 1rem 1.25rem;
+      font-size: 13.5px;
+      border-right: 1px solid var(--batas);
+      display: flex; align-items: center;
+    }
+    .jadwal-sel:last-child { border-right: none; }
+
+    .jadwal-baris:first-child .jadwal-sel {
+      color: rgba(255,255,255,0.7);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .status-badge {
+      padding: 4px 10px; border-radius: 4px;
+      font-size: 11px; font-weight: 600;
+    }
+    .status-buka { background: #d8f3dc; color: #1a7a42; }
+    .status-penuh { background: #fde8e8; color: #9a2020; }
+    .status-segera { background: #fff4d4; color: #916200; }
+
+    /* ===== PENGAJAR ===== */
+    .pengajar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .pengajar-kartu {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .pengajar-kartu:hover { transform: translateY(-6px); }
+
+    .pengajar-foto {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--hijau-sedang), var(--hijau-tua));
+      margin: 0 auto 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Amiri', serif;
+      font-size: 2rem; color: var(--emas);
+      border: 3px solid var(--emas-pucat);
+    }
+
+    .pengajar-nama {
+      font-family: 'Amiri', serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pengajar-gelar {
+      font-size: 12px; color: var(--teks-muted);
+      margin-bottom: 0.75rem; line-height: 1.5;
+    }
+    .pengajar-bidang {
+      display: inline-block;
+      background: var(--hijau-pucat);
+      color: var(--hijau-sedang);
+      padding: 4px 12px; border-radius: 100px;
+      font-size: 12px; font-weight: 500;
+    }
+
+    /* ===== KONTAK / CTA ===== */
+    .cta-bg {
+      background: linear-gradient(135deg, var(--hijau-tua) 0%, #2d6a4f 100%);
+      text-align: center;
+    }
+
+    .cta-arab {
+      font-family: 'Lateef', serif;
+      font-size: 3rem; color: rgba(201,162,39,0.4);
+      margin-bottom: 1rem; display: block;
+      direction: rtl;
+    }
+
+    .cta-judul {
+      font-family: 'Amiri', serif;
+      font-size: 2.6rem; color: #fff;
+      margin-bottom: 1rem; line-height: 1.2;
+    }
+    .cta-sub { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    .cta-aksi { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0c1f16;
+      padding: 3.5rem 2rem 2rem;
+      border-top: 1px solid rgba(201,162,39,0.15);
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand span { color: #fff; font-size: 18px; font-weight: 600; display: block; margin-bottom: 4px; }
+    .footer-brand small { color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+
+    .footer-teks { font-size: 13.5px; color: rgba(255,255,255,0.45); margin-top: 1rem; line-height: 1.75; }
+
+    .footer-judul { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--emas); margin-bottom: 1.25rem; }
+
+    .footer-link { list-style: none; }
+    .footer-link li { margin-bottom: 0.6rem; }
+    .footer-link a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13.5px; transition: color 0.2s; }
+    .footer-link a:hover { color: var(--emas-muda); }
+
+    .footer-bawah {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: rgba(255,255,255,0.3);
+      flex-wrap: wrap; gap: 1rem;
+    }
+
+    /* ===== RESPONSIF ===== */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; padding-top: 2rem; }
+      .hero-stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .seksi-header { grid-template-columns: 1fr; }
+      .jadwal-baris { grid-template-columns: 1fr; }
+      .jadwal-sel { border-right: none; border-bottom: 1px solid var(--batas); }
+      .jadwal-baris:first-child { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-judul { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .hero-ayat { font-size: 1.7rem; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bawah { flex-direction: column; text-align: center; }
+    }
+
+    /* ===== ANIMASI MASUK ===== */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      animation: fadeIn 0.7s ease forwards;
+    }
+    .fade-in:nth-child(2) { animation-delay: 0.1s; }
+    .fade-in:nth-child(3) { animation-delay: 0.2s; }
+    .fade-in:nth-child(4) { animation-delay: 0.3s; }
+    .fade-in:nth-child(5) { animation-delay: 0.4s; }
+    .fade-in:nth-child(6) { animation-delay: 0.5s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGASI ===== -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <div class="logo-icon">ن</div>
+      <div class="logo-teks">
+        <span>Nurul Ilmi</span>
+        <small>Pusat Pendidikan Islam</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#program">Program</a></li>
+      <li><a href="#jadwal">Jadwal</a></li>
+      <li><a href="#pengajar">Pengajar</a></li>
+      <li><a href="#testimonial">Alumni</a></li>
+      <li><a href="#kontak" class="nav-daftar">Daftar Sekarang</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="beranda">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Lembaga Terpercaya Sejak 2005</div>
+      <div class="hero-ayat">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</div>
+      <p class="hero-terjemah">"Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan" — Q.S. Al-'Alaq: 1</p>
+      <h1 class="hero-judul">Menuntut Ilmu adalah <em>Ibadah</em> yang Mulia</h1>
+      <p class="hero-deskripsi">
+        Program pendidikan dan pelatihan Islam terpadu — dari ilmu Al-Quran, Fiqih, hingga pengembangan diri berbasis nilai-nilai Islami untuk bekal dunia dan akhirat.
+      </p>
+      <div class="hero-aksi">
+        <a href="#program" class="btn-utama">Lihat Program</a>
+        <a href="#kontak" class="btn-sekunder">Konsultasi Gratis</a>
+      </div>
+    </div>
+    <div class="hero-kanan">
+      <div class="hero-stat-grid">
+        <div class="hero-stat fade-in">
+          <div class="hero-stat-angka">2.400+</div>
+          <div class="hero-stat-label">Santri Alumni</div>
+        </div>
+        <div class="hero-stat fade-in">
+          <div class="hero-stat-angka">18+</div>
+          <div class="hero-stat-label">Tahun Pengalaman</div>
+        </div>
+        <div class="hero-stat fade-in">
+          <div class="hero-stat-angka">40+</div>
+          <div class="hero-stat-label">Pengajar Bersanad</div>
+        </div>
+        <div class="hero-stat fade-in">
+          <div class="hero-stat-angka">12</div>
+          <div class="hero-stat-label">Program Aktif</div>
+        </div>
+      </div>
+      <div class="ornamen-tengah">﷽</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEUNGGULAN ===== -->
+<section class="fitur-bg" id="tentang">
+  <div class="container">
+    <div class="seksi-header">
+      <div>
+        <span class="seksi-label">Keunggulan Kami</span>
+        <h2 class="seksi-judul">Mengapa Nurul Ilmi?</h2>
+        <p class="seksi-deskripsi">Kami hadir dengan metode pembelajaran yang menggabungkan tradisi keilmuan Islam klasik dengan pendekatan modern yang efektif.</p>
+      </div>
+    </div>
+    <div class="fitur-grid">
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">📖</div>
+        <h3 class="fitur-judul">Sanad Keilmuan Jelas</h3>
+        <p class="fitur-teks">Semua pengajar memiliki sanad keilmuan yang tersambung kepada ulama-ulama mu'tabar, sehingga ilmu yang diajarkan terjamin kualitasnya.</p>
+      </div>
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">🕌</div>
+        <h3 class="fitur-judul">Kurikulum Komprehensif</h3>
+        <p class="fitur-teks">Mencakup Al-Quran, Hadits, Fiqih, Aqidah, Bahasa Arab, Akhlak, dan pengembangan diri yang semuanya berdasarkan Al-Quran dan Sunnah.</p>
+      </div>
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">🎓</div>
+        <h3 class="fitur-judul">Metode Adaptif</h3>
+        <p class="fitur-teks">Pembelajaran disesuaikan dengan tingkat dan kebutuhan peserta, mulai dari anak-anak, remaja, dewasa, hingga program khusus lansia.</p>
+      </div>
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">💬</div>
+        <h3 class="fitur-judul">Komunitas Aktif</h3>
+        <p class="fitur-teks">Bergabung dengan komunitas pelajar Islam yang aktif, saling mendukung, dan terhubung satu sama lain dalam perjalanan menuntut ilmu.</p>
+      </div>
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">🌐</div>
+        <h3 class="fitur-judul">Tersedia Online & Offline</h3>
+        <p class="fitur-teks">Fleksibilitas belajar dengan pilihan tatap muka di pusat kami atau daring melalui platform digital yang mudah digunakan.</p>
+      </div>
+      <div class="fitur-kartu">
+        <div class="fitur-ikon">📜</div>
+        <h3 class="fitur-judul">Sertifikat Resmi</h3>
+        <p class="fitur-teks">Mendapatkan sertifikat kelulusan yang diakui dan dapat digunakan sebagai bukti pencapaian ilmu yang telah ditempuh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section id="program">
+  <div class="container">
+    <div class="seksi-header">
+      <div>
+        <span class="seksi-label">Program Unggulan</span>
+        <h2 class="seksi-judul">Pilih Jalur Ilmu Anda</h2>
+        <p class="seksi-deskripsi">Program dirancang untuk berbagai tingkatan dan kebutuhan, dengan pendekatan yang menyenangkan namun tetap mendalam.</p>
+      </div>
+      <a href="#jadwal" class="btn-sekunder" style="border-color: var(--batas); color: var(--teks-sekunder); white-space: nowrap;">Lihat Semua →</a>
+    </div>
+    <div class="program-grid">
+      <div class="program-kartu">
+        <div class="program-header">
+          <div class="program-level">Dasar</div>
+          <div class="program-nama">Tilawah & Tahsin</div>
+          <div class="program-arab">تلاوة وتحسين</div>
+        </div>
+        <div class="program-body">
+          <p class="program-deskripsi">Memperbaiki bacaan Al-Quran sesuai kaidah tajwid dengan bimbingan langsung dari pengajar bersanad.</p>
+          <ul class="program-fitur">
+            <li>Makharijul huruf & sifat huruf</li>
+            <li>Hukum-hukum tajwid dasar</li>
+            <li>Latihan tartil dan mujawwad</li>
+            <li>Evaluasi mingguan</li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-durasi">Durasi: <strong>3 Bulan</strong></div>
+            <a href="#kontak" class="btn-daftar">Daftar →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-kartu">
+        <div class="program-header">
+          <div class="program-level">Menengah</div>
+          <div class="program-nama">Tahfizh Al-Quran</div>
+          <div class="program-arab">تحفيظ القرآن</div>
+        </div>
+        <div class="program-body">
+          <p class="program-deskripsi">Program menghafal Al-Quran yang terstruktur dengan target jelas dan metode yang telah terbukti efektif.</p>
+          <ul class="program-fitur">
+            <li>Target hafalan 1 juz per bulan</li>
+            <li>Muroja'ah terprogram setiap hari</li>
+            <li>Pendampingan musyrif pribadi</li>
+            <li>Ujian bulanan & sertifikasi</li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-durasi">Durasi: <strong>1–30 Bulan</strong></div>
+            <a href="#kontak" class="btn-daftar">Daftar →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-kartu">
+        <div class="program-header">
+          <div class="program-level">Lanjutan</div>
+          <div class="program-nama">Studi Fiqih Ibadah</div>
+          <div class="program-arab">فقه العبادات</div>
+        </div>
+        <div class="program-body">
+          <p class="program-deskripsi">Mempelajari hukum-hukum ibadah sehari-hari secara mendalam berdasarkan madzhab empat yang mu'tabar.</p>
+          <ul class="program-fitur">
+            <li>Thaharah, Shalat, Puasa, Zakat</li>
+            <li>Kajian kitab kuning mu'tabar</li>
+            <li>Diskusi dan tanya jawab ilmiah</li>
+            <li>Praktik langsung di lapangan</li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-durasi">Durasi: <strong>6 Bulan</strong></div>
+            <a href="#kontak" class="btn-daftar">Daftar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JADWAL ===== -->
+<section id="jadwal" style="background: var(--hijau-pucat);">
+  <div class="container">
+    <div class="seksi-header">
+      <div>
+        <span class="seksi-label">Jadwal Kelas</span>
+        <h2 class="seksi-judul">Batch Aktif 2025</h2>
+        <p class="seksi-deskripsi">Pilih waktu yang paling sesuai dengan aktivitas Anda. Kami menyediakan kelas pagi, sore, dan malam.</p>
+      </div>
+    </div>
+    <div class="jadwal-grid">
+      <div class="jadwal-baris">
+        <div class="jadwal-sel">Program</div>
+        <div class="jadwal-sel">Pengajar</div>
+        <div class="jadwal-sel">Jadwal</div>
+        <div class="jadwal-sel">Mode</div>
+        <div class="jadwal-sel">Status</div>
+      </div>
+      <div class="jadwal-baris">
+        <div class="jadwal-sel" style="font-weight:600;">Tilawah Pemula</div>
+        <div class="jadwal-sel" style="color:var(--teks-sekunder);">Ust. Ahmad Fauzan, Lc.</div>
+        <div class="jadwal-sel">Senin & Rabu, 08.00</div>
+        <div class="jadwal-sel">Offline</div>
+        <div class="jadwal-sel"><span class="status-badge status-buka">Terbuka</span></div>
+      </div>
+      <div class="jadwal-baris">
+        <div class="jadwal-sel" style="font-weight:600;">Tahfizh Juz 30</div>
+        <div class="jadwal-sel" style="color:var(--teks-sekunder);">Ustadzah Nadia Khairani, M.Pd.</div>
+        <div class="jadwal-sel">Selasa & Kamis, 16.00</div>
+        <div class="jadwal-sel">Offline + Online</div>
+        <div class="jadwal-sel"><span class="status-badge status-buka">Terbuka</span></div>
+      </div>
+      <div class="jadwal-baris">
+        <div class="jadwal-sel" style="font-weight:600;">Fiqih Ibadah</div>
+        <div class="jadwal-sel" style="color:var(--teks-sekunder);">Ust. Muhammad Ridwan, M.A.</div>
+        <div class="jadwal-sel">Sabtu, 09.00 – 11.00</div>
+        <div class="jadwal-sel">Offline</div>
+        <div class="jadwal-sel"><span class="status-badge status-penuh">Penuh</span></div>
+      </div>
+      <div class="jadwal-baris">
+        <div class="jadwal-sel" style="font-weight:600;">Bahasa Arab Intensif</div>
+        <div class="jadwal-sel" style="color:var(--teks-sekunder);">Ust. Hasan Al-Baqri, Lc.</div>
+        <div class="jadwal-sel">Setiap Hari, 19.30</div>
+        <div class="jadwal-sel">Online</div>
+        <div class="jadwal-sel"><span class="status-badge status-buka">Terbuka</span></div>
+      </div>
+      <div class="jadwal-baris">
+        <div class="jadwal-sel" style="font-weight:600;">Aqidah Islamiyah</div>
+        <div class="jadwal-sel" style="color:var(--teks-sekunder);">Ust. Zainul Arifin, S.Ag.</div>
+        <div class="jadwal-sel">Jumat, 14.00 – 16.00</div>
+        <div class="jadwal-sel">Offline + Online</div>
+        <div class="jadwal-sel"><span class="status-badge status-segera">Segera Buka</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PENGAJAR ===== -->
+<section id="pengajar">
+  <div class="container">
+    <div class="seksi-header">
+      <div>
+        <span class="seksi-label">Tim Pengajar</span>
+        <h2 class="seksi-judul">Belajar dari Para Ahli</h2>
+        <p class="seksi-deskripsi">Didampingi oleh para ustadz dan ustadzah yang berpengalaman, memiliki sanad keilmuan jelas, dan berdedikasi tinggi.</p>
+      </div>
+    </div>
+    <div class="pengajar-grid">
+      <div class="pengajar-kartu">
+        <div class="pengajar-foto">أح</div>
+        <h3 class="pengajar-nama">Ust. Ahmad Fauzan, Lc.</h3>
+        <p class="pengajar-gelar">Alumni Al-Azhar Kairo<br/>Spesialis Ilmu Tajwid & Qiraat</p>
+        <span class="pengajar-bidang">Tilawah & Tahsin</span>
+      </div>
+      <div class="pengajar-kartu">
+        <div class="pengajar-foto">نض</div>
+        <h3 class="pengajar-nama">Ustadzah Nadia Khairani</h3>
+        <p class="pengajar-gelar">M.Pd. – IAIN Bandung<br/>Hafidzah 30 Juz</p>
+        <span class="pengajar-bidang">Tahfizh Al-Quran</span>
+      </div>
+      <div class="pengajar-kartu">
+        <div class="pengajar-foto">مر</div>
+        <h3 class="pengajar-nama">Ust. Muhammad Ridwan</h3>
+        <p class="pengajar-gelar">M.A. – UIN Jakarta<br/>Doktor Fiqih Muqarran</p>
+        <span class="pengajar-bidang">Fiqih & Ushul</span>
+      </div>
+      <div class="pengajar-kartu">
+        <div class="pengajar-foto">حب</div>
+        <h3 class="pengajar-nama">Ust. Hasan Al-Baqri, Lc.</h3>
+        <p class="pengajar-gelar">Alumni Madinah University<br/>Native Arabic Speaker</p>
+        <span class="pengajar-bidang">Bahasa Arab</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIAL ===== -->
+<section class="testi-bg" id="testimonial">
+  <div class="container">
+    <div class="seksi-header">
+      <div>
+        <span class="seksi-label" style="color: var(--emas-muda);">Kata Alumni</span>
+        <h2 class="seksi-judul" style="color: #fff;">Mereka yang Telah Merasakan Manfaatnya</h2>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-kartu">
+        <div class="testi-bintang">★★★★★</div>
+        <p class="testi-kutipan">"Alhamdulillah, bacaan Al-Quran saya yang dulu berantakan kini sudah jauh lebih baik. Para ustadz sangat sabar dan metode pembelajaran sangat menyenangkan."</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">FR</div>
+          <div>
+            <div class="testi-nama">Farah Rahmawati</div>
+            <div class="testi-asal">Alumni Tilawah, Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-kartu">
+        <div class="testi-bintang">★★★★★</div>
+        <p class="testi-kutipan">"Program tahfizh di sini luar biasa. Dengan bimbingan musyrif yang sabar dan metode muroja'ah yang terstruktur, saya berhasil hafal 10 juz dalam setahun."</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">AD</div>
+          <div>
+            <div class="testi-nama">Ahmad Dhiya'uddin</div>
+            <div class="testi-asal">Alumni Tahfizh, Jakarta</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-kartu">
+        <div class="testi-bintang">★★★★★</div>
+        <p class="testi-kutipan">"Kajian fiqih-nya sangat mendalam tapi tidak membosankan. Banyak contoh praktis yang langsung bisa diterapkan dalam kehidupan sehari-hari. Sangat direkomendasikan!"</p>
+        <div class="testi-profil">
+          <div class="testi-avatar">SN</div>
+          <div>
+            <div class="testi-nama">Siti Nur Azizah</div>
+            <div class="testi-asal">Alumni Fiqih, Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-bg" id="kontak">
+  <div class="container" style="max-width: 700px; text-align: center;">
+    <span class="cta-arab">بِسْمِ اللَّهِ</span>
+    <h2 class="cta-judul">Mulai Perjalanan Ilmu Anda Hari Ini</h2>
+    <p class="cta-sub">Jangan tunda lagi. Setiap hari tanpa ilmu adalah kerugian. Bergabunglah bersama ribuan santri yang telah merasakan manfaatnya.</p>
+    <div class="cta-aksi">
+      <a href="tel:+6222123456" class="btn-utama">📞 Hubungi Kami</a>
+      <a href="https://wa.me/6222123456" class="btn-sekunder">💬 WhatsApp</a>
+    </div>
+    <p style="color: rgba(255,255,255,0.4); font-size: 13px; margin-top: 2rem;">
+      📍 Jl. Pendidikan Islam No. 45, Bandung, Jawa Barat &nbsp;|&nbsp; 📧 info@nurul-ilmi.id
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <span>Nurul Ilmi</span>
+        <small>Pusat Pendidikan & Pelatihan Islam</small>
+      </div>
+      <p class="footer-teks">Lembaga pendidikan Islam terpercaya yang berkomitmen untuk mencetak generasi muslim yang berilmu, berakhlak, dan bermanfaat bagi umat.</p>
+    </div>
+    <div>
+      <div class="footer-judul">Program</div>
+      <ul class="footer-link">
+        <li><a href="#">Tilawah & Tahsin</a></li>
+        <li><a href="#">Tahfizh Al-Quran</a></li>
+        <li><a href="#">Fiqih Ibadah</a></li>
+        <li><a href="#">Bahasa Arab</a></li>
+        <li><a href="#">Aqidah Islamiyah</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-judul">Informasi</div>
+      <ul class="footer-link">
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Tim Pengajar</a></li>
+        <li><a href="#">Jadwal Kelas</a></li>
+        <li><a href="#">Berita & Artikel</a></li>
+        <li><a href="#">Galeri</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-judul">Kontak</div>
+      <ul class="footer-link">
+        <li><a href="#">📞 (022) 123-4567</a></li>
+        <li><a href="#">💬 WhatsApp</a></li>
+        <li><a href="#">📧 info@nurul-ilmi.id</a></li>
+        <li><a href="#">📍 Bandung, Jawa Barat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bawah">
+    <span>© 2025 Nurul Ilmi. Semua hak dilindungi.</span>
+    <span style="font-family: 'Amiri', serif; color: rgba(201,162,39,0.4); font-size: 16px;">وَقُل رَّبِّ زِدْنِي عِلْمًا</span>
+  </div>
+</footer>
+
+</body>
+</html>
